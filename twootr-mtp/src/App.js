@@ -5,11 +5,11 @@ import User from "./components/User";
 import Compose from "./components/Compose";
 import Post from "./components/Post";
 import Main from "./components/Main";
+import axios from "axios";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
       <Header></Header>
       <User></User>
       <Compose></Compose>
@@ -26,7 +26,6 @@ function App() {
         >
           Learn React
         </a> */}
-      </header>
     </div>
   );
 }
