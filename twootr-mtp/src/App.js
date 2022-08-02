@@ -1,10 +1,10 @@
 // import logo from './logo.svg';
 // import './App.css';
-import Header from "./components/Header";
-import User from "./components/User";
-import Compose from "./components/Compose";
-import Post from "./components/Post";
-import Main from "./components/Main";
+import Header from "./components/Header.jsx";
+import User from "./components/User.jsx";
+import Compose from "./components/Compose.jsx";
+import Post from "./components/Post.jsx";
+// import Main from "./components/Main,jsx";
 import axios from "axios";
 
 function App() {
