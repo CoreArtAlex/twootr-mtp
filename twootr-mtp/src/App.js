@@ -1,10 +1,19 @@
 // import logo from './logo.svg';
 // import './App.css';
+import Header from "./components/Header";
+import User from "./components/User";
+import Compose from "./components/Compose";
+import Post from "./components/Post";
+import Main from "./components/Main";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+      <Header></Header>
+      <User></User>
+      <Compose></Compose>
+      <Post></Post>
         {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
