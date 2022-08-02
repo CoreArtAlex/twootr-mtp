@@ -1,4 +1,5 @@
 import React from 'react';
+import {StylePost} from './styles/Post.styles';
 
 export default function Post(){
     let newPost = function(){
@@ -15,8 +16,10 @@ export default function Post(){
         </div>
     }
     return (
+        <StylePost>
         <div>
             {newPost()}
         </div>
+        </StylePost>
     );
 }

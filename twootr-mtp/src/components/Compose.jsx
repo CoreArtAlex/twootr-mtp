@@ -1,7 +1,9 @@
 import React from 'react';
+import {StyleCompose} from './styles/Compose.styles';
 
 export default function Compose(){
     return (
+        <StyleCompose>
         <div>
             <label>Compose Twoot</label>
             {/* <form> */}
@@ -10,5 +12,6 @@ export default function Compose(){
                     <label>Character Counter</label>
             </form> */}
         </div>
+        </StyleCompose>
     );
 }
