@@ -9,3 +9,4 @@ Post.jsx
     2. Call the Avatar Data
     3. Call the Compose data
     4. Date Stamp
+    5. Image icons Selections
