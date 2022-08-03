@@ -4,15 +4,15 @@ import {StylePost} from './styles/Post.styles';
 export default function Post(){
     let newPost = function(){
         <div>
-            {/* <image></image> */}
+            <img src="" alt="" />
             <label>Name + Last Name</label>
             <label>Username</label>
             <p>Twoot</p>
             <br></br>
             <label>Time Stamp</label>
-            {/* <image>Flag</image>
-            <image>Retwoot</image>
-            <image>Heart</image> */}
+            <img src="" alt="" />
+            <img src="" alt="" />
+            <img src="" alt="" />
         </div>
     }
     return (
