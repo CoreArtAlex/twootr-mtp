@@ -5,14 +5,14 @@ import User from "./components/User.jsx";
 import Compose from "./components/Compose.jsx";
 import Post from "./components/Post.jsx";
 // import Main from "./components/Main,jsx";
-import axios from "axios";
+// import axios from "axios";
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
       <User></User>
-      <Compose></Compose>
+      <Compose/>
       <Post></Post>
         {/* <img src={logo} className="App-logo" alt="logo" />
         <p>

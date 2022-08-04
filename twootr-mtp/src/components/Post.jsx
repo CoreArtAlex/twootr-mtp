@@ -1,7 +1,11 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect } from 'react';
 import {StylePost} from './styles/Post.styles';
 
 export default function Post(){
+    // Use UseEffect & Axios to obtain the UserName from User.jsx
+    // & Compose data from Compose.jsx
+
     let newPost = function(){
         <div>
             <img src="" alt="" />
