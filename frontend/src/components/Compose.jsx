@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import {StyleCompose} from './styles/Compose.styles';
-import Post from './Post';
+// import Post from './Post';
 
-export default function Compose(props){
+export default function Compose(props,{setTwoots}){
     const { compose, setCompose } = props;
     const [composeChar, setComposeChar] = useState('');
     const [author, setAuthor] = useState('John Doe');
@@ -26,7 +26,7 @@ export default function Compose(props){
         axios.post('http://localhost:8080/twoot',{ newTwoot })
         .then((res)=>{
             console.log('compose res',res);
-            setCompose([...props.twoots, {...res.data}]);
+            setCompose([...setTwoots, {...res.data}]);
             console.log('twoots', setCompose);
         })
         .catch((error)=> console.log('error',error));
@@ -48,7 +48,7 @@ export default function Compose(props){
     return (
         <StyleCompose>
         <div>
-            <label>Compose Twoot</label>
+            <label className='compose-label' >Compose Twoot</label>
             <form action="" onSubmit={handleSubmit}>
                 <input type="text" 
                 value={compose}

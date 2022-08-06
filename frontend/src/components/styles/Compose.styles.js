@@ -14,18 +14,27 @@ div {
     margin: 0;
 }
 
-.input{
+.compose-label{
+    font-size: 12pt;
+    font-weight: 400;
+}
 
+.input{
+    width: 100%;
 }
 
 .submitBtn{
     font-family: 'Permanent Marker', cursive;
+    color: #fff;
+    background-color: #711a75;
 }
 
 .counter{
     font-family: 'Permanent Marker', cursive;
     font-size: 8pt;
     font-weight: 50;
+    display:flex;
+    justify-content: flex-end;
 }
 }
 `;
