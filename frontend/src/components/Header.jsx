@@ -1,17 +1,16 @@
 import React from 'react';
 import {StyleHeader} from './styles/Header.styles';
 
-export default function Header(){
+export default function Header(props){
     return (
         <StyleHeader>
         <header>
             <div>
-                <label class="title">Twootr</label>
+                <label className="title">Twootr</label>
                 <label>
-                    <span class="bold">Write </span>a New Twoot
+                    <span className="bold">Write </span>a New Twoot
                 </label>
             </div>
-            {/* <image></image> */}
         </header>
         </StyleHeader>
     );

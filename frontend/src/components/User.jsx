@@ -43,18 +43,18 @@ export default function User(props){
 
     return (
         <StyleUser>
-        <div>
+        <div className="user">
             <img src={imgUrl} />
             <div className={`name ${displayDivName ? "" : "hide"}`}>
-                <p name="user" class="bold">{userName}</p>
+                <p name="user" className="bold">{userName}</p>
                 <p name="user">{userLastName}</p>
-                <button class="edit" onClick={() => clickBtn(false)}><i class='fas fa-edit'></i></button>
+                <button className="edit" onClick={() => clickBtn(false)}><i className='fas fa-edit'></i></button>
             </div>
             <div className={`name ${displayDivName ? "hide" : ""}`}>
             <form onSubmit={handleSubmit}>
                 <input type="text" name="name" value={userName} onChange={handleInputChange} />
                 <input type="text" name="last-name" value={userLastName} onChange={handleInputChange} />
-                <button class="check" onClick={() => clickBtn(true)}>✓</button>
+                <button className="check" onClick={() => clickBtn(true)}>✓</button>
             </form>
             </div>
             <p name="user">@{authorSlug}</p>
