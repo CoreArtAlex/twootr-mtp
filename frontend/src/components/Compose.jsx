@@ -30,21 +30,19 @@ export default function Compose(props){
             console.log('twoots', setCompose);
         })
         .catch((error)=> console.log('error',error));
-
-        const counter = (event)=>{
-            const length = event.target.value.length;
-            setTwootLength(140 - length);
-
-            if(length >= 1 && length < 141){
-                setCounterVal(true);
-            }else{
-                setCounterVal(false);
-            }
-        }
     };
 
     const handleInputChange = (e)=>{
         setComposeChar(e.target.value);
+        
+        const length = e.target.value.length;
+        setTwootLength(140 - length);
+
+        if(length >= 1 && length < 141){
+            setCounterVal(true);
+        }else{
+            setCounterVal(false);
+        }
     };
 
     return (
