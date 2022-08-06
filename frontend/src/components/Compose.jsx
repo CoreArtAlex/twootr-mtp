@@ -5,24 +5,28 @@ import {StyleCompose} from './styles/Compose.styles';
 export default function Compose(props){
     const { compose, setCompose } = props;
     const [composeChar, setComposeChar] = useState('');
+    const [author, setAuthor] = useState('John Doe');
+    const [authorSlug, setAuthorSlug] = useState('@JohnDoe');
+    const [dateAdded, setDateAdded] = useState('2022-08-07');
 
     const handleSubmit = (event)=>{
         event.preventDefault();
         console.log('twooted', composeChar);
         const newTwoot = {
-            author:'',
+            author:author,
             content: composeChar,
-            authorSlug:'',
-            dateAdded:'',
+            authorSlug:authorSlug,
+            dateAdded:dateAdded,
         };
         console.log('new compose',newTwoot);
 
-        axios.post('/twoot',{ newTwoot })
+        axios.post('http://localhost:8080/twoot',{ newTwoot })
         .then((res)=>{
             console.log('compose res',res);
-            setCompose([...compose, {...res.data}]);
+            setCompose([...newTwoot, {...res.data}]);
             console.log('twoots', setCompose);
-        }).catch((error)=> console.log('error',error.response.data));
+        })
+        .catch((error)=> console.log('error',error));
     };
 
     const handleInputChange = (e)=>{
