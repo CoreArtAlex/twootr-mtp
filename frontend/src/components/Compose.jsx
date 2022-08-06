@@ -7,7 +7,7 @@ export default function Compose(props,{setTwoots}){
     const { compose, setCompose } = props;
     const [composeChar, setComposeChar] = useState('');
     const [author, setAuthor] = useState('John Doe');
-    const [authorSlug, setAuthorSlug] = useState('@JohnDoe');
+    const [authorSlug, setAuthorSlug] = useState('JohnDoe');
     const [dateAdded, setDateAdded] = useState('2022-08-07');
     const [twootLength, setTwootLength] = useState (140);
     const [counterVal, setCounterVal] = useState(true);
