@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import {StyleCompose} from './styles/Compose.styles';
+import Post from './Post';
 
 export default function Compose(props){
     const { compose, setCompose } = props;
@@ -8,6 +9,8 @@ export default function Compose(props){
     const [author, setAuthor] = useState('John Doe');
     const [authorSlug, setAuthorSlug] = useState('@JohnDoe');
     const [dateAdded, setDateAdded] = useState('2022-08-07');
+    const [twootLength, setTwootLength] = useState (140);
+    const [counterVal, setCounterVal] = useState(true);
 
     const handleSubmit = (event)=>{
         event.preventDefault();
@@ -23,10 +26,21 @@ export default function Compose(props){
         axios.post('http://localhost:8080/twoot',{ newTwoot })
         .then((res)=>{
             console.log('compose res',res);
-            setCompose([...newTwoot, {...res.data}]);
+            setCompose([...props.twoots, {...res.data}]);
             console.log('twoots', setCompose);
         })
         .catch((error)=> console.log('error',error));
+
+        const counter = (event)=>{
+            const length = event.target.value.length;
+            setTwootLength(140 - length);
+
+            if(length >= 1 && length < 141){
+                setCounterVal(true);
+            }else{
+                setCounterVal(false);
+            }
+        }
     };
 
     const handleInputChange = (e)=>{
@@ -41,12 +55,14 @@ export default function Compose(props){
                 <input type="text" 
                 value={compose}
                 required
-                onChange={handleInputChange} />
+                className='input'
+                onChange={handleInputChange}
+                />
                 <br></br>
-                <button type='submit'>
+                <button className='submitBtn' type='submit'>
                     Twoot
                 </button>
-                <label htmlFor="">Counter</label>
+                <label className='counter' htmlFor="">{twootLength > 140 ? '-' + twootLength:twootLength}</label>
             </form>
         </div>
         </StyleCompose>

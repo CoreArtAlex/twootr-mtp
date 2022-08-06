@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import {StylePost} from './styles/Post.styles';
 
-export default function Post(){
+export default function Post(props){
     // Use UseEffect & Axios to obtain the UserName from User.jsx
     // & Compose data from Compose.jsx
 
