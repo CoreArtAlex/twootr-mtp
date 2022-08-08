@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import {StyleCompose} from './styles/Compose.styles';
 // import styled from 'styled-components';
@@ -13,7 +13,7 @@ export default function Compose(props){
     const [twootLength, setTwootLength] = useState (140);
     const [counterVal, setCounterVal] = useState(true);
     const [twoots, setTwoots] = useState(props.setTwoots);
-
+    const twootInput = useRef(null);
     // console.log('props',props);
     const handleSubmit = (event)=>{
         event.preventDefault();
@@ -54,10 +54,17 @@ export default function Compose(props){
         }
     };
 
+    function focusHandler() {
+        twootInput.current.focus();
+    }
+
     return (
         
         <div>
             <StyleCompose>
+            <div className="focusBtn">
+                <i className="fas fa-angle-double-down" onClick={focusHandler}></i>
+            </div>
             <label className='compose-label' >Compose Twoot</label>
             <form action="" onSubmit={handleSubmit}>
                 <input 
@@ -67,6 +74,7 @@ export default function Compose(props){
                 required
                 className='input'
                 onChange={handleInputChange}
+                ref={twootInput}
                 />
                 <br></br>
                 <button className='submitBtn' type='submit'>
