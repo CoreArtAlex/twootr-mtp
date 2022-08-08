@@ -46,8 +46,11 @@ export default function Compose(props){
 
         if(length >= 1 && length < 141){
             setCounterVal(true);
+            document.getElementById('counter').style.color = '#000000';
         }else{
             setCounterVal(false);
+            alert('Size of Twoot Exceeded, Please be more Concise');
+            document.getElementById('counter').style.color = '#CD1818';
         }
     };
 
@@ -57,7 +60,9 @@ export default function Compose(props){
             <StyleCompose>
             <label className='compose-label' >Compose Twoot</label>
             <form action="" onSubmit={handleSubmit}>
-                <input type="text" 
+                <input 
+                id='compose'
+                type="text" 
                 value={compose}
                 required
                 className='input'
@@ -67,7 +72,10 @@ export default function Compose(props){
                 <button className='submitBtn' type='submit'>
                     Twoot
                 </button>
-                <label className='counter' htmlFor=""  >
+                <label 
+                id='counter'
+                className='counter' 
+                htmlFor="" >
                     {twootLength > 140 ? '-' + twootLength:twootLength}
                     </label>
             </form>
