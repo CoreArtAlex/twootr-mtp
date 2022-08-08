@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import Compose from './Compose';
 import {StyleUser} from './styles/User.styles';
 
 export default function User(props){
@@ -26,10 +27,11 @@ export default function User(props){
         }
         console.log("Name: ", name);
         setAuthor(name);
+        console.log('author',setAuthor);
         name = name.replaceAll(' ', '-');
         setAuthorSlug(name);
         setImgUrl("https://avatars.dicebear.com/api/bottts/" + name + ".svg");
-
+        console.log('authorSlug',setAuthorSlug);
     }
 
     const clickBtn = (opt) => {
@@ -42,8 +44,9 @@ export default function User(props){
     }
 
     return (
-        <StyleUser>
+        
         <div className="user">
+            <StyleUser>
             <img src={imgUrl} />
             <div className={`name ${displayDivName ? "" : "hide"}`}>
                 <p name="user" className="bold">{userName}</p>
@@ -58,11 +61,9 @@ export default function User(props){
             </form>
             </div>
             <p name="user">@{authorSlug}</p>
-                {/*
-                <input>Last Name</input>
-                <button></button>
-                <label>@Username(Name+LastName)</label>*/}
+            </StyleUser>
+            <Compose author={author} authorSlug={authorSlug}/>
         </div>
-        </StyleUser>
+        
     );
 }

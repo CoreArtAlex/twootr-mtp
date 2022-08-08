@@ -1,24 +1,28 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import {StyleCompose} from './styles/Compose.styles';
-// import Post from './Post';
+// import styled from 'styled-components';
 
-export default function Compose(props,{setTwoots}){
+
+export default function Compose(props){
     const { compose, setCompose } = props;
     const [composeChar, setComposeChar] = useState('');
-    const [author, setAuthor] = useState('John Doe');
-    const [authorSlug, setAuthorSlug] = useState('JohnDoe');
+    const [author, setAuthor] = useState(props.author);
+    const [authorSlug, setAuthorSlug] = useState(props.authorSlug);
     const [dateAdded, setDateAdded] = useState('2022-08-07');
     const [twootLength, setTwootLength] = useState (140);
     const [counterVal, setCounterVal] = useState(true);
+    const [twoots, setTwoots] = useState(props.setTwoots);
 
+    // console.log('props',props);
     const handleSubmit = (event)=>{
         event.preventDefault();
+        // console.log('compose props', props);
         console.log('twooted', composeChar);
         const newTwoot = {
-            author:author,
+            author:props.author,
             content: composeChar,
-            authorSlug:authorSlug,
+            authorSlug:props.authorSlug,
             dateAdded:dateAdded,
         };
         console.log('new compose',newTwoot);
@@ -30,6 +34,8 @@ export default function Compose(props,{setTwoots}){
             console.log('twoots', setCompose);
         })
         .catch((error)=> console.log('error',error));
+
+        window.location.reload(false);
     };
 
     const handleInputChange = (e)=>{
@@ -46,8 +52,9 @@ export default function Compose(props,{setTwoots}){
     };
 
     return (
-        <StyleCompose>
+        
         <div>
+            <StyleCompose>
             <label className='compose-label' >Compose Twoot</label>
             <form action="" onSubmit={handleSubmit}>
                 <input type="text" 
@@ -60,9 +67,12 @@ export default function Compose(props,{setTwoots}){
                 <button className='submitBtn' type='submit'>
                     Twoot
                 </button>
-                <label className='counter' htmlFor="">{twootLength > 140 ? '-' + twootLength:twootLength}</label>
+                <label className='counter' htmlFor=""  >
+                    {twootLength > 140 ? '-' + twootLength:twootLength}
+                    </label>
             </form>
+            </StyleCompose>
         </div>
-        </StyleCompose>
+       
     );
 }
