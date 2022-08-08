@@ -47,9 +47,11 @@ export default function Compose(props){
         if(length >= 1 && length < 141){
             setCounterVal(true);
             document.getElementById('counter').style.color = '#000000';
-        }else{
+            document.getElementById('twootBtn').disabled= false;
+        }else if(length > 140){
             setCounterVal(false);
-            alert('Size of Twoot Exceeded, Please be more Concise');
+            document.getElementById('twootBtn').disabled= true;
+            // alert('Size of Twoot Exceeded, Please be more Concise');
             document.getElementById('counter').style.color = '#CD1818';
         }
     };
@@ -77,7 +79,10 @@ export default function Compose(props){
                 ref={twootInput}
                 />
                 <br></br>
-                <button className='submitBtn' type='submit'>
+                <button 
+                id='twootBtn'
+                className='submitBtn' 
+                type='submit'>
                     Twoot
                 </button>
                 <label 
