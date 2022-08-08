@@ -9,7 +9,7 @@ export default function Compose(props){
     const [composeChar, setComposeChar] = useState('');
     const [author, setAuthor] = useState(props.author);
     const [authorSlug, setAuthorSlug] = useState(props.authorSlug);
-    const [dateAdded, setDateAdded] = useState('2022-08-07');
+    const [dateAdded, setDateAdded] = useState(new Date());
     const [twootLength, setTwootLength] = useState (140);
     const [counterVal, setCounterVal] = useState(true);
     const [twoots, setTwoots] = useState(props.setTwoots);
