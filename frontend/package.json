@@ -2,7 +2,7 @@
   "name": "twootr-mtp",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://twootr-gui.herokuapp.com/",
+  "proxy": "https://twootr-gui.herokuapp.com",
   "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
